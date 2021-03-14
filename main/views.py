@@ -16,7 +16,7 @@ def home(request):
 
 def Details(request):
 
-    customers = Customer.objects.all()
+    customers = Customer.objects.all().order_by('id')
     return render(request,"second.html",context={'customers':customers})
 
 def RecentTransactions(request):
