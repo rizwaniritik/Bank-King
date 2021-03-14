@@ -1,0 +1,210 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Home</title>
+{% endblock title %}
+
+{% block body%}
+<link href='https://fonts.googleapis.com/css?family=Akaya Kanadaka' rel='stylesheet'>
+<style>
+  .roro {
+    font-family: ;
+    font-size: large;
+
+  }
+
+  h6 {
+    color: wheat;
+  }
+
+  .lili {
+
+    width: 100%;
+    height: 100%;
+  }
+
+  p1 {
+    color: aliceblue
+  }
+
+  .nn {
+
+    background-color: rgb(59, 59, 58);
+  }
+  .head{
+    font-family:'Akaya Kanadaka' ;
+    font-size: 55px;
+  }
+  .par{
+    font-family:'Akaya Kanadaka' ;
+    font-size: 35px;
+
+  }
+
+  .box1 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+   
+    background-color: rgb(226, 178, 87);
+    animation-name: r1;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+  }
+
+  .box2 {
+    width: 50px;
+    height: 50px;
+   
+    position: relative;
+    background-color: rgb(226, 178, 87);;
+    animation-name: l1;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+  }
+
+  @keyframes r1 {
+    from {
+      width: 50px;
+    }
+
+    to {
+      width: 60px;
+
+    }
+  }
+
+  @keyframes l1 {
+    from {
+      width: 50px;
+    }
+
+    to {
+      width: 159px;
+
+    }
+  }
+  .mm{
+    background-color: black;
+  }
+  .bis:hover{
+    background-color: black;
+    padding-left:1px ;
+    padding-right: 1px;
+    border-radius: 5px;
+  }
+</style>
+
+
+
+
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="background-color: black;">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class=" container-fluid carousel-item active lili" data-bs-interval="1000">
+      <img src="/static/rupixen-com-iSs4_hV7j2A-unsplash.jpg" style="opacity: 100%;" class="d-block w-100"
+        alt="...">
+      <div class="carousel-caption d-none d-md-block roro ">
+        <h6 class = " font-effect-emboss " style="color:rgba(245, 245, 245, 0.521);font-family: 'Akaya Kanadaka';font-size: 25px;">We Keep Your Money</h6>
+        <p1  class = " font-effect-emboss bis"  style="font-family: 'Akaya Kanadaka';font-size: 30px; color: rgb(201, 182, 9);">We insure your money and
+          status keep growing.</p1>
+      </div>
+    </div>
+    <div class="carousel-item lili" data-bs-interval="2000">
+      <img src="/static/ayaneshu-bhardwaj-OwOtokcHv90-unsplash.jpg"  class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h6 class = " font-effect-emboss "style="color: rgba(245, 245, 245, 0.521);font-family: 'Akaya Kanadaka';font-size: 25px;">Safer Transactions</h6>
+        <p1 class = " font-effect-emboss bis "style="font-family: 'Akaya Kanadaka';font-size: 30px; color:rgb(201, 182, 9);">We Ensure Safest
+          Transactions</p1>
+      </div>
+    </div>
+    <div class="carousel-item lili">
+      <img src="/static/rupixen-com-LGM0PPU9Q4U-unsplash.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h6 class = " font-effect-emboss "style="color: rgba(245, 245, 245, 0.521);font-family: 'Akaya Kanadaka';font-size: 25px;">Proper Records</h6>
+        <p1 class = " font-effect-emboss bis"style="font-family: 'Akaya Kanadaka' ;font-size: 30px;color:rgb(201, 182, 9);">We keep proper record as
+          well as your Trust</p1>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<div class="container-fluid d-flex justify-content-center p-4 nn">
+  <div class="box box2">
+    <h1 style="height: 50px;width: 200px; font-family: 'Akaya Kanadaka';font-size: 50px;color: rgb(59, 59, 58);">ABOUT
+    </h1>
+  </div>
+
+
+
+  <div class="box box1">
+    <h1 style="height: 50px;width: 100px; font-family: 'Akaya Kanadaka';font-size: 50px;color: rgb(59, 59, 58);">US</h1>
+  </div>
+</div>
+
+<div class="mm">
+  <div class="card mb-1 " style="max-width: 1800px;max-height: 800px; background-color:rgb(226, 178, 87);">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="/static/floriane-vita-FyD3OWBuXnY-unsplash.jpg" style="height: 300px;width: 500px;" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title head">Father Of All Banks</h5>
+          <p class="card-text par">This Bank's name has Bank and King in it,that says ,this bank is the king of all banks.It will provide you security better than any other bank out there.</p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-1 " style="max-width: 1800px;max-height: 800px; background-color:rgb(226, 178, 87);">
+    <div class="row g-0">
+
+      <div class="col-md-8 ">
+        <div class="card-body">
+          <h5 class="card-title head">Mother Of All Banks</h5>
+          <p class="card-text par">Our bank is a mother of all banks as it provides funds to every other banks out there.Our bank is the largest source of fund all over the worls,either in case of loans or interests.</p>
+        
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img src="/static/etienne-martin-2_K82gx9Uk8-unsplash.jpg" style="width: 500px;height: 300px;" alt="...">
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-1 " style="max-width: 1800px;max-height: 800px;background-color:rgb(226, 178, 87); margin-bottom: 0rem;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="/static/ishant-mishra-Ha4GZKWINdw-unsplash.jpg" style="width: 500px;height: 300px;" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title head">Chacha Chachi Of All Banks</h5>
+          <p class="card-text par">This bank was established in Angrezo ka Zamana,and the rest is history.</p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

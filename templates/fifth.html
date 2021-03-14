@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Transaction</title>
+{% endblock title %}
+
+{% block body%}
+<style>
+  .nn {
+    background-color: rgb(104, 103, 103);
+  }
+
+  .com {
+    background-color: black;
+    padding: 5px 5px;
+    margin-bottom: 0rem;
+  }
+
+  .loo {
+    background-color: rgb(172, 156, 7)
+  }
+
+  .loo:hover {
+    background-color: rgb(168, 115, 44);
+
+  }
+
+ 
+
+ 
+</style>
+
+
+
+  <div class="container-fluid d-flex justify-content-center p-4 nn">
+    <h1 class="font-effect-shadow-multiple"
+      style="font-family: 'Akaya Kanadaka'; background-color:rgb(172, 156, 7); border-radius: 10px; font-size: 50px;">
+      Transaction</h1>
+
+  </div>
+  <div class="container-fluid" style="margin:0rem;background-color:black ">
+  <form class="row g-3" style="text-align: center;" method="post" action="/fifth" style="background-color: black;">
+    <div class="com ">
+      {% csrf_token %}
+
+
+
+
+
+      <ul class="list-group list-group-horizontal container-fluid d-flex justify-content-center"
+        style=" width: 970px; margin-bottom: 10px; background-color:rgb(121, 109, 4); ;padding:0px 0px;">
+
+        <li class="list-group-item font-effect-emboss "
+          style="width: 245px;background-color:rgb(99, 89, 3);font-family: Sofia, sans-serif;font-size: 20px; text-align: center;">
+          {{cust.cid}}
+        </li>
+        <label for="inputState" class="form-label  "></label>
+        <select id="inputState" name="sender" class="form-select font-effect-emboss"
+          style="width: 245px;background-color:rgb(99, 89, 3);font-family: Sofia, sans-serif;font-size: 20px; text-align: center;">
+          {% if cust %}
+          <option value={{cust.cid}}>({{cust.cid}}){{cust.name}}</option>
+
+
+          {% else %}
+          <option value=0 selected>User Id</option>
+          {% for c in cust %}
+
+          <option
+            style="width: 245px;background-color:rgb(99, 89, 3);font-family: Sofia, sans-serif;font-size: 20px; text-align: center;"
+            value={{c.cid}}>({{c.cid}}){{c.name}}</option>
+          {% endfor %}
+          {% endif %}
+        </select>
+
+        <li class="list-group-item font-effect-emboss "
+          style="width: 245px;background-color:rgb(99, 89, 3);font-family: Sofia, sans-serif;font-size: 20px; text-align: center;">
+          {{cust.email}}
+        </li>
+
+        <li class="list-group-item font-effect-emboss "
+          style="width: 245px;background-color:rgb(99, 89, 3);font-family: Sofia, sans-serif;font-size: 20px; text-align: center;">
+          {{cust.balance}}
+        </li>
+
+      </ul>
+
+
+      <div class="input-group  container-fluid d-flex justify-content-center input-group  " style="width: 990px;">
+        <label class="input-group-text font-effect-emboss"
+          style="background-color:rgb(99, 89, 3) ;font-family: 'Akaya Kanadaka';" for="inputGroupSelect01">To:</label>
+
+
+        <label for="inputState" class="form-label"></label>
+        <select id="inputState" name="receiver" class="form-select"
+          style="background-color: rgb(172, 156, 7);font-family: 'Akaya Kanadaka';font-size: 20px;">
+          <option value=0 selected>User Id</option>
+          {% for c in customers %}
+          
+          <option value={{c.cid}}>({{c.cid}}){{c.name}}</option>
+        
+          {% endfor %}
+        </select>
+
+        <span class="input-group-text font-effect-emboss"
+          style="margin-left:2px ;background-color:rgb(99, 89, 3) ;font-family: 'Akaya Kanadaka';"
+          id="basic-addon1">Amount</span>
+        <label for="inputAmount"> <input type="number" class="form-control" name="Amount" id="inputAmount" min=0 required
+            style="background-color: rgb(172, 156, 7);font-family: 'Akaya Kanadaka';font-size: 20px;"
+            placeholder="Enter the valid amount" aria-label="Username" aria-describedby="basic-addon1"> </label>
+        <span class="input-group-text font-effect-emboss"
+          style="background-color:rgb(99, 89, 3) ;font-family: 'Akaya Kanadaka';" id="basic-addon1">Rs</span>
+
+
+
+      </div>
+
+      <div class="container-fluid d-flex justify-content-center " style="margin-top: 10px; width: 1000px;">
+        <button class="btn  font-effect-shadow-multiple loo" type="submit"
+          style="font-family: 'Akaya Kanadaka';  border-radius: 10px; font-size: 25px; width: 200px;"><a
+            style="text-decoration: none;">Transfer</button></a>
+
+      </div>
+
+    </div>
+  </form>
+</div>
+{% endblock body %}
+
+
+
+
+
+
+
+<!-- <select class="form-select "
+    
+      style="background-color: rgb(172, 156, 7);font-family: 'Akaya Kanadaka';font-size: 20px;" id="inputGroupSelect01" name="receiver">
+      <option selected>User Id</option>
+      {% for c in customers %}
+     
+        
+      
+      <option value={{c.sno}}>({{c.cid}}){{c.name}}</option>
+    
+    {% endfor %}
+    </select> -->
+
+
+
+
+<!-- <li name="sender" class="list-group-item font-effect-emboss form-control" 
+      style="width: 245px;background-color:rgb(121, 109, 4);font-family: Sofia, sans-serif;font-size: 20px; text-align: center;" value={{cust.sno}} >({{cust.id}}){{cust.name}}</li> -->

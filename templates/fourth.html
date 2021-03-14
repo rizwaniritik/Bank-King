@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  <title>All Transactions</title>
+{% endblock title %}
+
+{% block body%}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
+<style>
+
+  a:hover{
+    color: rgb(104, 103, 103);
+  }
+  .nn{
+    background-color: rgb(104, 103, 103);
+  }
+
+  .lol{
+    background-color: rgb(172, 156, 7);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+    
+  }
+  .sisi{
+    background-color:rgb(121, 109, 4);
+  }
+  .sisi:hover{
+    background-color: orangered;
+  }
+  .lups:hover{
+    background-color: rgb(91, 202, 91);
+
+  }
+  .cups:hover{
+    background-color: rgb(219, 85, 23);
+
+  }
+</style>
+
+<div class="container-fluid d-flex justify-content-center p-4 nn " style="margin-bottom: 0rem;">
+ <h1 class="font-effect-shadow-multiple" style="font-family: 'Akaya Kanadaka'; background-color:rgb(172, 156, 7); border-radius: 10px; font-size: 50px;">All Transactions</h1>
+</div>
+
+
+<table class="table lol container-fluid py-2 " style="margin-bottom: 0rem;">
+  <thead>
+    <tr class="font-effect-shadow-multiple" style="background-color: rgb(121, 109, 4); font-family: 'Akaya Kanadaka'; font-size: 30px;">
+      
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    
+   
+      
+   {% for t in transactions  %}
+     
+  
+
+    <tr  style="   font-family: Sofia, sans-serif;font-size: 20px;" >
+     
+     
+      <td>{{t.sender_acc}}</td>
+      <td>{{t.receiver_acc}}</td>
+      <td>{{t.Amount}}</td>
+      <td>{{t.date}}</td>
+       {% if t.status %}
+        
+    
+      <td class="lups">Success</td>
+      {% else %}
+      <td class="cups">Failed</td>
+      {% endif %}
+      
+
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+{% endblock body %}

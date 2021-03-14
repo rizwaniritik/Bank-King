@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  <title>Customers Details</title>
+{% endblock title %}
+
+{% block body%}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
+<style>
+
+  a:hover{
+    color: rgb(104, 103, 103);
+  }
+  .nn{
+    background-color: rgb(104, 103, 103);
+  }
+
+  .lol{
+    background-color: rgb(172, 156, 7);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+    
+  }
+  .sisi{
+    background-color:rgb(121, 109, 4);
+  }
+  .sisi:hover{
+    background-color: orangered;
+  }
+</style>
+
+<div class="container-fluid d-flex justify-content-center p-4 nn">
+ <h1 class="font-effect-shadow-multiple" style="font-family: 'Akaya Kanadaka'; background-color:rgb(172, 156, 7); border-radius: 10px; font-size: 50px;">Customers Details</h1>
+</div>
+
+
+<table class="table lol container-fluid py-2 "  style="margin-bottom: 0rem;">
+  <thead>
+    <tr class="font-effect-shadow-multiple" style="background-color: rgb(121, 109, 4); font-family: 'Akaya Kanadaka'; font-size: 30px;">
+      <th scope="col">User Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Current Balance</th>
+      <th scope="col">Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in customers %}
+      
+
+    <tr  style="   font-family: Sofia, sans-serif;font-size: 20px;" >
+      
+      <td>{{ c.id }}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.email}}</td>
+      <td>{{c.balance}}</td>
+      <td ><a href="{% url 'transfer' customer_id=c.id %}"><button type="button" class="sisi">Transfer</button></td></a>
+
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+{% endblock body %}

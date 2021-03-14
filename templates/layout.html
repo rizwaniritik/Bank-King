@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Akaya Kanadaka' rel='stylesheet'>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+    {% block title %}
+    <title> </title>
+
+    {% endblock title %}
+    <style>
+        
+        .lolo {
+            background-color: gray;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+
+        }
+        .lolo:hover{
+            color: white;
+        }
+
+        .changesme:hover {
+            background-color: rgb(172, 156, 7);
+           
+
+
+            border-radius: 5px;
+        }
+
+        a {
+            color: black;
+        }
+
+        a:hover {
+            color: cornsilk;
+           
+        }
+
+
+
+        /* added */
+    }
+
+.scroll {
+    color: #fff;
+    margin-top: 100px
+}
+
+#toTopBtn {
+    position: fixed;
+    bottom: 26px;
+    right: 39px;
+    z-index: 98;
+    padding: 21px;
+
+}
+
+.js .cd-top--fade-out {
+    opacity: .5
+}
+
+.js .cd-top--is-visible {
+    visibility: visible;
+    opacity: 1
+}
+
+.js .cd-top {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s, visibility .3s, background-color .3s
+}
+
+.cd-top {
+    position: fixed;
+    bottom: 20px;
+    bottom: var(--cd-back-to-top-margin);
+    right: 20px;
+    right: var(--cd-back-to-top-margin);
+    display: inline-block;
+    height: 40px;
+    height: var(--cd-back-to-top-size);
+    width: 40px;
+    width: var(--cd-back-to-top-size);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05) !important;
+    background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1571057658/cd-top-arrow.svg) no-repeat center 50%;
+    
+    background-color: hsla(var(--cd-color-3-h), var(--cd-color-3-s), var(--cd-color-3-l), 0.8)
+}
+.cd-top:hover{
+    background-color:rgb(99, 89, 3);
+}
+
+.height {
+    height: 3000px
+}
+    </style>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="container d-flex justify-content-center ">
+                <a href="/" class="navbar-brand"> <img src="/static/LOGO.jpg" width="400" height="70" alt="Not found"></a>
+            </div>
+
+        </div>
+
+
+    </nav>
+
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="lolo p-4">
+
+            <ul class="navbar-nav lolo  me-auto mb-2 mb-lg-0 font-effect-emboss">
+                <li class="nav-item changesme ">
+                    <a class="nav-link active textme" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item changesme">
+                    <a class="nav-link" href="/Details">Customers Details</a>
+                </li>
+                <li class="nav-item dropdown changesme">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Transactions
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/RecentTransactions">Successful Transactions</a></li>
+                        <li><a class="dropdown-item" href="/AllTransactions">All Transactions</a></li>
+
+                    </ul>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </div>
+    <div style="background-color: black;">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert font-effect-emboss alert-{{ message.tags }} alert-dismissible fade show" style="background-color: rgb(99, 89, 3);" role="alert">
+      <strong>{{ message }}!</strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% block body %}
+
+    {% endblock body %}
+
+    <footer class="bd-footer p-3 p-md-5 mt-0 bg-dark text-center text-sm-start" >
+        <div class="container-fluid d-flex justify-content-center" >
+            <a style=":hover:{background-color:none ;}" href="https://www.instagram.com/ritik_rizwani__/?igshid=ak2chiwof4ys"> <i class="bi bi-instagram" style="margin-right:40px; margin-left: 20px; color: rgb(172, 156, 7) ;font-size: 2rem;"></i></a>
+            <a href="https://github.com/rizwaniritik"> <i  class="bi bi-github" style="margin-right: 40px; margin-left: 20px; color: rgb(172, 156, 7) ;border-radius: 30px;font-size: 2rem;"></i></a>
+            <a href="linkedin.com/in/ritik-rizwani-3978411b3"><i class="bi bi-linkedin" style="margin-right: 40px; margin-left: 20px;color: rgb(172, 156, 7) ;border-radius: 30px;font-size: 2rem;"></i></a>
+            <a href="https://twitter.com/RizwaniRitik?s=09"><i class="bi bi-twitter" style="margin-right: 40px; margin-left: 20px;color: rgb(172, 156, 7) ;border-radius: 30px;font-size: 2rem;"></i></a>
+            
+         </div>
+         <div class="container-fluid d-flex justify-content-center" style="margin-top: 10px;">
+             <p class=" font-effect-emboss" style=" font-family:  Sofia, sans-serif;font-size: 20px;" >Designed and Developed by <a href="linkedin.com/in/ritik-rizwani-3978411b3" class=" font-effect-emboss" style=" font-family: 'Akaya Kanadaka';" >Ritik Rizwani</a></p>
+         </div>
+         <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
+    </footer>
+    </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+
+
+</body>
+
+</html>
