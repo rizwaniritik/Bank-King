@@ -24,7 +24,7 @@ def RecentTransactions(request):
     transactions = Transaction.objects.all().order_by('-sno')
     return render(request,"third.html",context={'transactions':transactions})
 
-    def AllTransaction(request,r):
+def AllTransaction(request,r):
     transactions = Transaction.objects.all().order_by('-sno')
     messages.info(request, 'Payment Successful!! ')
     
