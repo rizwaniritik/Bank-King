@@ -26,6 +26,13 @@ def RecentTransactions(request):
 
 def AllTransactions(request):
     transactions = Transaction.objects.all().order_by('-sno')
+    if request.method=="POST":
+        messages.info(request, 'Payment Successfull ')
+
+        return render(request,"fourth.html",context={'transactions':transactions})
+
+
+    
     return render(request,"fourth.html",context={'transactions':transactions})
 
 def fifth(request):
