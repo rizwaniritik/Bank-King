@@ -29,7 +29,7 @@ def AllTransactions(request):
     return render(request,"fourth.html",context={'transactions':transactions})
 
 def fifth(request):
-    customers = Customer.objects.all()
+    customers = Customer.objects.all().order_by('id')
    
    
     
