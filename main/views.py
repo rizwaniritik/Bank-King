@@ -24,18 +24,15 @@ def RecentTransactions(request):
     transactions = Transaction.objects.all().order_by('-sno')
     return render(request,"third.html",context={'transactions':transactions})
 
-def AllTransaction(request,r):
-    transactions = Transaction.objects.all().order_by('-sno')
-    messages.info(request, 'Payment Successful!! ')
-    
-    return render(request,"fourth.html",context={'transactions':transactions})
+
 
 def AllTransactions(request):
     transactions = Transaction.objects.all().order_by('-sno')
-    
-
-    
-    return render(request,"fourth.html",context={'transactions':transactions})
+    if r==0:
+        return render(request,"fourth.html",context={'transactions':transactions})
+    else:
+        messages.info(request, 'Payment Successful')
+        return render(request,"fourth.html",context={'transactions':transactions})
 
 def fifth(request):
     customers = Customer.objects.all()
