@@ -59,7 +59,8 @@ def fifth(request):
                 status =True
                 t = Transaction(sender_acc =sender_acc,receiver_acc=receiver_acc,Amount=Amount,status=status,date=datetime.now() )
                 t.save()
-                return redirect("/AllTransactions",r=1)
+                l=1
+                return redirect("/AllTransactions",r=int(l))
             
             else:
                 messages.info(request, 'Insufficient Balance ')
