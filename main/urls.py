@@ -8,6 +8,7 @@ urlpatterns = [
    path('Details',views.Details,name="Details"),
     path('RecentTransactions',views.RecentTransactions,name="RecentTransactions"),
      path('AllTransactions',views.AllTransactions,name="AllTransactions"),
+      path('AllTransaction/<int:r>',views.AllTransaction,name="AllTransaction"),
       path('fifth',views.fifth,name='fifth'),
       path('transfer/<int:customer_id>',views.transfer,name='transfer'),
 ]

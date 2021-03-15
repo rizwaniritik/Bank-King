@@ -24,13 +24,15 @@ def RecentTransactions(request):
     transactions = Transaction.objects.all().order_by('-sno')
     return render(request,"third.html",context={'transactions':transactions})
 
+    def AllTransaction(request,r):
+    transactions = Transaction.objects.all().order_by('-sno')
+    messages.info(request, 'Payment Successful!! ')
+    
+    return render(request,"fourth.html",context={'transactions':transactions})
+
 def AllTransactions(request):
     transactions = Transaction.objects.all().order_by('-sno')
-    if request.method=="POST":
-        messages.info(request, 'Payment Successfull ')
-
-        return render(request,"fourth.html",context={'transactions':transactions})
-
+    
 
     
     return render(request,"fourth.html",context={'transactions':transactions})
@@ -60,7 +62,7 @@ def fifth(request):
                 status =True
                 t = Transaction(sender_acc =sender_acc,receiver_acc=receiver_acc,Amount=Amount,status=status,date=datetime.now() )
                 t.save()
-                return redirect("/AllTransactions")
+                return redirect("/AllTransaction",r=1)
             
             else:
                 messages.info(request, 'Insufficient Balance ')
