@@ -95,9 +95,12 @@
           style="background-color: rgb(172, 156, 7);font-family: 'Akaya Kanadaka';font-size: 20px;">
           <option value=0 selected>User Id</option>
           {% for c in customers %}
+          {% if c!=cust %}
+            
+        
           
           <option value={{c.cid}}>({{c.cid}}){{c.name}}</option>
-        
+          {% endif %}
           {% endfor %}
         </select>
 
