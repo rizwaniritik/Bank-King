@@ -29,7 +29,7 @@ def AllTransactions(request):
     return render(request,"fourth.html",context={'transactions':transactions})
 
 def fifth(request):
-    customers = Customer.objects.all().order_by('id')
+    customers = Customer.objects.all()
    
    
     
@@ -72,7 +72,7 @@ def fifth(request):
     return render(request,"fifth.html",context={'customers':customers})
 
 def transfer( request,customer_id):
-    customers = Customer.objects.all()
+    customers = Customer.objects.all().order_by('id')
     cust=Customer.objects.get(pk=customer_id)
     return render(request,"fifth.html",context={'customers':customers,'cust':cust})
 
