@@ -26,7 +26,7 @@ def RecentTransactions(request):
 
 
 
-def AllTransactions(request):
+def AllTransactions(request,r):
     transactions = Transaction.objects.all().order_by('-sno')
     if r==0:
         return render(request,"fourth.html",context={'transactions':transactions})
